@@ -148,13 +148,3 @@ public/clinic/  the one real interior photo (cropped, no identifying marks)
 
 `AGENTS.md` documents conventions and gotchas for coding agents working
 in this repo.
-
-## Recent polish — 2026-08-24
-
-**Hero — remove green, add life without AI template:**
-`components/sections/Hero.tsx:8` warm bone wash replaces teal radial (`rgba(23,114,107,0.10)` → `rgba(239,234,227,0.9)`), eyebrow pill `border-teal/bg-teal-soft` → `border-titanium/bone`, `Dental` gradient → `text-slate` italic. Removed `animate-pulse` dot. Photo now `hero-float` / `hero-float-delayed` with imperfect timing (7s / 8.2s reverse, ±0.15° rotation) — `app/globals.css:158`.
-
-**Phase 15 — form clarity:**
-`components/appointment/DetailsFields.tsx:122` phone helper → “So the clinic can call you back. It does not need to be a WhatsApp number.” with `aria-describedby`. Disclosure card above fields links to `/privacy`. Review step `components/appointment/steps.tsx:342` shows handoff explainer above send + live `tel:` fallback + read-only `pre` preview of `buildMessage(state)`. Treatments `app/treatments/page.tsx:65` → `grid md:grid-cols-2` with `flex flex-col` + `mt-auto` buttons; services as pill badges. `PageHeader` breadcrumb Home affordance.
-
-Verified: `npm run build` 14 routes, helper/disclosure/handoff/preview render JS-disabled, anchor 14/14, CLS 0, `/appointment` 219KB.
